@@ -57,7 +57,7 @@ class ProceedButton extends Component {
         return (
             <View style={[this.props.style, {flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}]}>
                 <View style={{flex: 2, justifyContent: 'flex-end', alignItems: 'center', flexDirection: "row"}}>
-                    <Text style={{fontSize: 12, color: "#444444", marginRight: 24}}>로그인 없이 진행하기</Text>
+                    <Text style={{fontSize: 12, color: "#444444", marginRight: 12, fontFamily: "NanumSquareL"}}>로그인 없이 진행하기</Text>
                     <TouchableOpacity style={{width: 24, height: 24, justifyContent: 'center', alignItems: 'center', marginRight: 24}}>
                         <Image style={{flex: 1, resizeMode: "contain"}} source={require('../../../resource/Button/next48.png')} />
                     </TouchableOpacity>
