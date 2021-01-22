@@ -17,6 +17,33 @@ class AppTitle extends Component {
     }
 }
 
+class KakaoLoginButton extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <View>
+
+            </View>
+        );
+    }
+}
+
+class ProceedButton extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <View>
+
+            </View>
+        );
+    }
+}
 
 
 export default class LoginScreen extends Component {
@@ -48,14 +75,11 @@ export default class LoginScreen extends Component {
         return (
             <View>
                 <View />
-                <View>
-                </View>
+                <AppTitle />
                 <View />
-                <View>
-                </View>
+                <KakaoLoginButton />
                 <View />
-                <View>
-                </View>
+                <ProceedButton />
             </View>
         );
     }
