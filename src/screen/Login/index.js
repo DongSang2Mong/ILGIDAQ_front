@@ -10,7 +10,7 @@ class AppTitle extends Component {
 
     render() {
         return (
-            <View>
+            <View style={this.props.style}>
 
             </View>
         );
@@ -24,7 +24,7 @@ class KakaoLoginButton extends Component {
 
     render() {
         return (
-            <View>
+            <View style={this.props.style}>
 
             </View>
         );
@@ -38,8 +38,8 @@ class ProceedButton extends Component {
 
     render() {
         return (
-            <View>
-
+            <View style={this.props.style}>
+                
             </View>
         );
     }
@@ -49,14 +49,6 @@ class ProceedButton extends Component {
 export default class LoginScreen extends Component {
     constructor(props) {
         super(props);
-    }
-
-    componentDidMount() {
-        // For Kakao Login, kakao Login -> Get profile
-        this.kakaoLogin()
-        .then((result) => {
-            // send 
-        });
     }
 
     kakaoLogin(){
@@ -73,13 +65,13 @@ export default class LoginScreen extends Component {
 
     render() {
         return (
-            <View>
-                <View />
-                <AppTitle />
-                <View />
-                <KakaoLoginButton />
-                <View />
-                <ProceedButton />
+            <View style={{flex: 1, justifyContent: 'center'}}>
+                <View style={{flex: 2, backgroundColor: "#23AD3C"}}/>
+                <AppTitle style={{flex: 1}}/>
+                <View style={{flex: 4, backgroundColor: "#47A1F3"}}/>
+                <KakaoLoginButton style={{flex: 1}}/>
+                <View style={{flex: 1, backgroundColor: "#2GA54C"}}/>
+                <ProceedButton style={{flex: 1}}/>
             </View>
         );
     }
