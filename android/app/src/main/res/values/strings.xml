@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ILGIDAQ</string>
++   <string name="kakao_app_key">b1aabac8605f10a3b470dbbb3e991cb0</string>
 </resources>

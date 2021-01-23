@@ -16,9 +16,9 @@ class App extends Component {
 
     render() {
         return(  
-            <SafeAreaView>
+            <SafeAreaView style={{flex: 1}}>
                 <NavigationContainer>
-                    <StackNaigation.Navigator initialRouteName="Login">
+                    <StackNaigation.Navigator initialRouteName="Login" headerMode="none">
                         <StackNaigation.Screen name="Board" component={BoardScreen} />
                         <StackNaigation.Screen name="Edit" component={EditScreen} />
                         <StackNaigation.Screen name="Login" component={LoginScreen} />
