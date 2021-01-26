@@ -14,7 +14,7 @@ const commonStyle = StyleSheet.create({
         flex: 1, 
         resizeMode: "contain"
     },
-    margeinSide : {
+    marginSide : {
         marginLeft: 33,
         marginRight: 33,
     },

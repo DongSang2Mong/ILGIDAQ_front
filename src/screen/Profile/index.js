@@ -26,6 +26,11 @@ class UserName extends Component {
 class UserInfo extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            diaryNum: 120,
+            follower: 24,
+            following: 17
+        }
     }
 
     render() {
@@ -33,19 +38,19 @@ class UserInfo extends Component {
             <View style={[this.props.style, {flexDirection: "row", justifyContent: "space-between"}]}>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>120</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.diaryNum}</Text>
                         <Text style={[textStyle.r16, {color: colorStyle.black}]}>일기장</Text>
                     </View>
                 </View>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>24</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.follower}</Text>
                         <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로워</Text>
                     </View>
                 </View>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-end'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>17</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.following}</Text>
                         <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로잉</Text>
                     </View>
                 </View>
@@ -98,16 +103,16 @@ export default class ProfileScreen extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <Header headerText="프로필" />
-                <View style={[{flex: 1}, commonStyle.margeinSide]}>
+                <Header headerText="프로필" buttonType="None"/>
+                <View style={[{flex: 1}, commonStyle.marginSide]}>
                     <View style={{flex: 0.8}} />
-                    <UserName stlye={{flex: 1, marginBottom : 20}} />
+                    <UserName stlye={{flex: 1}} />
                     <UserInfo style={{flex: 3}} />
                     <PointInfo style={{flex: 2.5}} />
                     <View style={{flex: 0.5}} />
                     <DiaryInfo style={{flex: 5.5}} />
                 </View>
-                <BottomTab nowMenu={PROF_MENU}/>
+                <BottomTab navigation={this.props.navigation} nowMenu={PROF_MENU}/>
             </View>
         );
     }

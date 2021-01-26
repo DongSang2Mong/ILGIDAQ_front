@@ -16,19 +16,34 @@ class BottomTab extends Component {
         return(
             <View style={[this.props.style, tabStyle.BottomTabContainer]}>
                 <View style={[commonStyle.centerAlign, {flex: 1}]}>
-                    <TouchableOpacity style={[commonStyle.centerAlign, {marginBottom: 4}]}>
+                    <TouchableOpacity 
+                        style={[commonStyle.centerAlign, {marginBottom: 4}]}
+                        onPress={()=>{
+                            this.props.navigation.navigate("Main")
+                        }}
+                    >
                         <Image style={commonStyle.image28} source={require('../../resource/Button/Large/home_icon58.png')} />
                     </TouchableOpacity>
                     <SelectCircle selectState={this.props.nowMenu == HOME_MENU}/>
                 </View>
                 <View style={[commonStyle.centerAlign, {flex: 1}]}>
-                    <TouchableOpacity style={[commonStyle.centerAlign, {marginBottom: 4}]}>
+                    <TouchableOpacity
+                        style={[commonStyle.centerAlign, {marginBottom: 4}]}
+                        onPress={()=>{
+                            this.props.navigation.navigate("Board")
+                        }}
+                    >
                         <Image style={commonStyle.image28} source={require('../../resource/Button/Large/dashboard_icon58.png')} />
                     </TouchableOpacity>
                     <SelectCircle selectState={this.props.nowMenu == DASH_MENU}/>
                 </View>
                 <View style={[commonStyle.centerAlign, {flex: 1}]}>
-                    <TouchableOpacity style={[commonStyle.centerAlign, {marginBottom: 4}]}>
+                    <TouchableOpacity 
+                        style={[commonStyle.centerAlign, {marginBottom: 4}]}
+                        onPress={()=>{
+                            this.props.navigation.navigate("Profile")
+                        }}
+                    >
                         <Image style={commonStyle.image28} source={require('../../resource/Button/Large/person_icon58.png')} />
                     </TouchableOpacity>
                     <SelectCircle selectState={this.props.nowMenu == PROF_MENU}/>
