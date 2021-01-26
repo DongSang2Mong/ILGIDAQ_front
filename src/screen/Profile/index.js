@@ -17,6 +17,9 @@ class Header extends Component {
     }
 }
 
+const HOME_MENU = 1;
+const DASH_MENU = 2;
+const PROF_MENU = 3; 
 class BottomTab extends Component {
     constructor(props) {
         super(props);
@@ -24,11 +27,48 @@ class BottomTab extends Component {
 
     render() {
         return(
-            <View style={[this.props.style]}>
-
+            <View style={[this.props.style, {flexDirection: "row", paddingTop: 6, height: 60, borderTopLeftRadius: 6, borderTopRightRadius: 6, backgroundColor: "#0E0E0E"}]}>
+                <View style={{flex: 1, justifyContent: "center", alignItems: 'center'}}>
+                    <TouchableOpacity style={{justifyContent: "center", alignItems: 'center'}}>
+                        <Image style={{width: 28, height: 28, resizeMode: 'contain', marginBottom: 4}} source={require('../../../resource/Button/Large/home_icon58.png')} />
+                    </TouchableOpacity>
+                    <SelectCircle selectState={this.props.nowMenu == HOME_MENU}/>
+                </View>
+                <View style={{flex: 1, justifyContent: "center", alignItems: 'center'}}>
+                    <TouchableOpacity style={{justifyContent: "center", alignItems: 'center'}}>
+                        <Image style={{width: 28, height: 28, resizeMode: 'contain', marginBottom: 4}} source={require('../../../resource/Button/Large/dashboard_icon58.png')} />
+                    </TouchableOpacity>
+                    <SelectCircle selectState={this.props.nowMenu == DASH_MENU}/>
+                </View>
+                <View style={{flex: 1, justifyContent: "center", alignItems: 'center'}}>
+                    <TouchableOpacity style={{justifyContent: "center", alignItems: 'center'}}>
+                        <Image style={{width: 28, height: 28, resizeMode: 'contain', marginBottom: 4}} source={require('../../../resource/Button/Large/person_icon58.png')} />
+                    </TouchableOpacity>
+                    <SelectCircle selectState={this.props.nowMenu == PROF_MENU}/>
+                </View>
             </View>
         );
     }
+}
+
+class SelectCircle extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        if(this.props.selectState) {
+            return (
+                <Image style={{width: 7, height: 7, resizeMode: 'contain'}} source={require('../../../resource/Button/Small/selected.png')} />
+            );
+        }
+        else {
+            return (
+                <Image style={{width: 7, height: 7, resizeMode: 'contain'}} source={require('../../../resource/Button/Small/notSelected.png')} />
+            );
+        }
+    }
+
 }
 
 class UserName extends Component {
@@ -103,9 +143,9 @@ export default class ProfileScreen extends Component {
                     <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
                     <PointInfo style={{flex: 2.5}} />
                     <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
-                    <DiaryInfo style={{flex: 8}} />
+                    <DiaryInfo style={{flex: 5.5}} />
                 </View>
-                <BottomTab />
+                <BottomTab nowMenu={PROF_MENU}/>
             </View>
         );
     }
