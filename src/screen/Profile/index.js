@@ -94,13 +94,16 @@ export default class ProfileScreen extends Component {
 
     render() {
         return (
-            <View>
-                <Header />
-                <View>
-                    <UserName headerText="프로필"/>
-                    <UserInfo />
-                    <PointInfo />
-                    <DiaryInfo />
+            <View style={{flex: 1}}>
+                <Header headerText="프로필" />
+                <View style={{flex: 1}}>
+                    <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
+                    <UserName stlye={{flex: 1, marginBottom : 20}} />
+                    <UserInfo style={{flex: 3}} />
+                    <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
+                    <PointInfo style={{flex: 2.5}} />
+                    <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
+                    <DiaryInfo style={{flex: 8}} />
                 </View>
                 <BottomTab />
             </View>
