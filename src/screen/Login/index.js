@@ -18,6 +18,7 @@ export default class LoginScreen extends Component {
                 KakaoLogins.getProfile()
                 .then(result => { 
                     console.log(result);
+                    this.props.navigation.reset({index: 0, routes: [{name: 'Profile'}]});
                     res(result); 
                 })
                 .catch(err => { rej(err); });
