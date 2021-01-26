@@ -4,96 +4,10 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { commonStyle, textStyle, colorStyle } from '../commonStyle';
 import Header from '../../components/Header';
 import {PROF_MENU, BottomTab} from '../../components/BottomTab';
-
-class UserName extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <View style={[this.props.style], {flexDirection: "row", alignItems: 'center'}}>
-            <View style={{width: 20, height: 20, borderRadius: 20, backgroundColor: colorStyle.blue, marginRight: 10}}/>
-                <Text style={[textStyle.r20, {color: colorStyle.black, marginRight: 10}]}>Nonokee</Text>
-                <TouchableOpacity style={{width: 16, height: 16}}>
-                    <Image style={commonStyle.image16} source={require('../../../resource/Button/Large/edit36.png')} />
-                </TouchableOpacity>
-            </View>
-        );
-    }
-}
-
-class UserInfo extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            diaryNum: 120,
-            follower: 24,
-            following: 17
-        }
-    }
-
-    render() {
-        return(
-            <View style={[this.props.style, {flexDirection: "row", justifyContent: "space-between"}]}>
-                <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-start'}}>
-                    <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.diaryNum}</Text>
-                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>일기장</Text>
-                    </View>
-                </View>
-                <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-                    <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.follower}</Text>
-                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로워</Text>
-                    </View>
-                </View>
-                <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-end'}}>
-                    <View style={{alignItems: 'center'}}>
-                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>{this.state.following}</Text>
-                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로잉</Text>
-                    </View>
-                </View>
-            </View>
-        );
-    }
-}
-
-class PointInfo extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        var id = "Nonokee";
-        return(
-            <View style={[this.props.style, {justifyContent: "center"}]}>
-                <View style={{flexDirection: "row", alignItems: 'center', marginBottom: 12}}>
-                    <Text style={[textStyle.b28, {color: colorStyle.black, marginRight: 9}]}>{id}</Text>
-                    <Text style={[textStyle.r20, {color: colorStyle.black}]}>님의 보유 포인트는?</Text>  
-                </View>
-                <View style={{flexDirection: "row"}}>
-                    <Text style={[textStyle.b60, {color: colorStyle.skyblue}]}>20,931 </Text>
-                    <Text style={[textStyle.r60, {color: colorStyle.black}]}>P</Text>   
-                </View>
-            </View>
-        );
-    }
-}
-
-class DiaryInfo extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <View style={[this.props.style]}>
-
-            </View>
-        );
-    }
-}
+import DiaryInfo from './DiaryInfo';
+import UserName from './UserName';
+import UserInfo from './UserInfo';
+import PointInfo from './PointInfo';
 
 export default class ProfileScreen extends Component {
     constructor(props) {
