@@ -22,6 +22,11 @@ const commonStyle = StyleSheet.create({
         width: 28, 
         height: 28, 
         resizeMode: 'contain'
+    },
+    image16 : {
+        width: 16, 
+        height: 16, 
+        resizeMode: 'contain'
     }
 });
 
@@ -42,6 +47,30 @@ const textStyle = StyleSheet.create({
         fontSize: 22,
         fontFamily: "NanumSquareB"
     },
+    b26 : {
+        fontSize: 26,
+        fontFamily: "NanumSquareB"
+    },
+    b28 : {
+        fontSize: 28,
+        fontFamily: "NanumSquareB"
+    },
+    b60 : {
+        fontSize: 60,
+        fontFamily: "NanumSquareB"
+    },
+    r16 : {
+        fontSize: 16,
+        fontFamily: "NanumSquareR"
+    },
+    r20 : {
+        fontSize: 20,
+        fontFamily: "NanumSquareR"
+    },
+    r60 : {
+        fontSize: 60,
+        fontFamily: "NanumSquareR"
+    }
 });
 
 const colorStyle = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { commonStyle, textStyle } from '../commonStyle';
+import { commonStyle, textStyle, colorStyle } from '../commonStyle';
 import Header from '../../components/Header';
 import {PROF_MENU, BottomTab} from '../../components/BottomTab';
 
@@ -13,10 +13,10 @@ class UserName extends Component {
     render() {
         return(
             <View style={[this.props.style], {flexDirection: "row", alignItems: 'center'}}>
-            <View style={{width: 20, height: 20, borderRadius: 20, backgroundColor: "#1B49BE", marginRight: 10}}/>
-                <Text style={{fontSize: 20, fontFamily: "NanumSquareR", color: "#0E0E0E", marginRight: 10}}>Nonokee</Text>
-                <TouchableOpacity style={{width: 12, height: 12}}>
-                    <Image style={{width: 12, height: 12, resizeMode: 'contain'}} source={require('../../../resource/Button/Large/edit36.png')} />
+            <View style={{width: 20, height: 20, borderRadius: 20, backgroundColor: colorStyle.blue, marginRight: 10}}/>
+                <Text style={[textStyle.r20, {color: colorStyle.black, marginRight: 10}]}>Nonokee</Text>
+                <TouchableOpacity style={{width: 16, height: 16}}>
+                    <Image style={commonStyle.image16} source={require('../../../resource/Button/Large/edit36.png')} />
                 </TouchableOpacity>
             </View>
         );
@@ -33,20 +33,20 @@ class UserInfo extends Component {
             <View style={[this.props.style, {flexDirection: "row", justifyContent: "space-between"}]}>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-start'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={{fontSize: 26, fontFamily: "NanumSquareB", color: "#0E0E0E", marginBottom: 6}}>120</Text>
-                        <Text style={{fontSize: 16, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>일기장</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>120</Text>
+                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>일기장</Text>
                     </View>
                 </View>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={{fontSize: 26, fontFamily: "NanumSquareB", color: "#0E0E0E", marginBottom: 6}}>24</Text>
-                        <Text style={{fontSize: 16, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>팔로워</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>24</Text>
+                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로워</Text>
                     </View>
                 </View>
                 <View style={{flex: 1, justifyContent: 'center', alignItems: 'flex-end'}}>
                     <View style={{alignItems: 'center'}}>
-                        <Text style={{fontSize: 26, fontFamily: "NanumSquareB", color: "#0E0E0E", marginBottom: 6}}>17</Text>
-                        <Text style={{fontSize: 16, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>팔로잉</Text>
+                        <Text style={[textStyle.b26, {color: colorStyle.black, marginBottom: 6}]}>17</Text>
+                        <Text style={[textStyle.r16, {color: colorStyle.black}]}>팔로잉</Text>
                     </View>
                 </View>
             </View>
@@ -64,12 +64,12 @@ class PointInfo extends Component {
         return(
             <View style={[this.props.style, {justifyContent: "center"}]}>
                 <View style={{flexDirection: "row", alignItems: 'center', marginBottom: 12}}>
-                    <Text style={{fontSize: 28, fontFamily: "NanumSquareB", color: "#0E0E0E", marginRight: 9}}>{id}</Text>
-                    <Text style={{fontSize: 20, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>님의 보유 포인트는?</Text>  
+                    <Text style={[textStyle.b28, {color: colorStyle.black, marginRight: 9}]}>{id}</Text>
+                    <Text style={[textStyle.r20, {color: colorStyle.black}]}>님의 보유 포인트는?</Text>  
                 </View>
                 <View style={{flexDirection: "row"}}>
-                    <Text style={{fontSize: 60, fontFamily: "NanumSquareB", color: "#2496FF"}}>20,931 </Text>
-                    <Text style={{fontSize: 60, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>P</Text>   
+                    <Text style={[textStyle.b60, {color: colorStyle.skyblue}]}>20,931 </Text>
+                    <Text style={[textStyle.r60, {color: colorStyle.black}]}>P</Text>   
                 </View>
             </View>
         );
