@@ -93,7 +93,6 @@ class UserInfo extends Component {
     render() {
         return(
             <View style={[this.props.style]}>
-
             </View>
         );
     }
@@ -105,9 +104,17 @@ class PointInfo extends Component {
     }
 
     render() {
+        var id = "Nonokee";
         return(
-            <View style={[this.props.style]}>
-
+            <View style={[this.props.style, {justifyContent: "center"}]}>
+                <View style={{flexDirection: "row", marginBottom: 9}}>
+                    <Text style={{fontSize: 18, fontFamily: "NanumSquareB", color: "#0E0E0E"}}>{id}</Text>
+                    <Text style={{fontSize: 18, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>님의 보유 포인트는?</Text>  
+                </View>
+                <View style={{flexDirection: "row"}}>
+                    <Text style={{fontSize: 48, fontFamily: "NanumSquareB", color: "#2496FF"}}>20,931 </Text>
+                    <Text style={{fontSize: 48, fontFamily: "NanumSquareR", color: "#0E0E0E"}}>P</Text>   
+                </View>
             </View>
         );
     }
@@ -136,7 +143,7 @@ export default class ProfileScreen extends Component {
         return (
             <View style={{flex: 1}}>
                 <Header headerText="프로필" />
-                <View style={{flex: 1}}>
+                <View style={{flex: 1, marginLeft: 30, marginRight: 30}}>
                     <View style={{flex: 0.5, backgroundColor: "#2a5637"}} />
                     <UserName stlye={{flex: 1, marginBottom : 20}} />
                     <UserInfo style={{flex: 3}} />
