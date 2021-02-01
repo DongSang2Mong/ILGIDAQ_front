@@ -21,6 +21,9 @@ class App extends Component {
                     <StackNaigation.Navigator 
                         initialRouteName="Main"
                         headerMode="none"
+                        screenOptions={{
+                          animationEnabled: false,
+                        }}
                     >
                         <StackNaigation.Screen name="Board" component={BoardScreen} />
                         <StackNaigation.Screen name="Edit" component={EditScreen} />
