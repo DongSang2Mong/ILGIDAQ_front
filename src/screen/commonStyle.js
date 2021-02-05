@@ -43,6 +43,18 @@ const textStyle = StyleSheet.create({
         fontSize: 12,
         fontFamily: "NanumSquareB"
     },
+    b12: {
+        fontSize: 12,
+        fontFamily: "NanumSquareB"
+    },
+    b14: {
+        fontSize: 14,
+        fontFamily: "NanumSquareB"
+    },
+    b18: {
+        fontSize: 18,
+        fontFamily: "NanumSquareB"
+    },
     b22: {
         fontSize: 22,
         fontFamily: "NanumSquareB"
@@ -58,6 +70,10 @@ const textStyle = StyleSheet.create({
     b60 : {
         fontSize: 60,
         fontFamily: "NanumSquareB"
+    },
+    r12 : {
+        fontSize: 12,
+        fontFamily: "NanumSquareR"
     },
     r16 : {
         fontSize: 16,
