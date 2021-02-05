@@ -19,11 +19,12 @@ class PointView extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
         return(
-            <View style={[this.props.style]}>
-
+            <View style={[this.props.style, {flexDirection: "row", justifyContent: "space-between"}]}>
+                <Text style={[textStyle.r18, {color: colorStyle.gray44, textAlignVertical: "center"}]}>{this.props.nickname} 님의 보유 포인트는?</Text>
+                <Text style={[textStyle.b24, {color: colorStyle.skyblue, textAlignVertical: "center"}]}>{this.props.point}</Text>
+                <Text style={[textStyle.b24, {textAlignVertical: "center"}]}>P</Text>
             </View>
         )
     }
@@ -37,6 +38,10 @@ class DiaryView extends Component {
     render() {
         return(
             <View style={[this.props.style]}>
+                <View style={{flexDirection: "row"}}>
+                    <Text style={[textStyle.b18, {color: colorStyle.orange}]}>오늘</Text>
+                    <Text style={[textStyle.b18]}>의 일기</Text>
+                </View>
                 <FlatList 
                     data={this.props.diaryContents}
                     renderItem={({ item }) => {
@@ -91,7 +96,7 @@ class DiaryMetadata extends Component {
                         <Text style={[textStyle.r12, {color: colorStyle.white}]}>{this.props.diaryContents.writer}</Text>
                         <Text style={[textStyle.b14, {color: colorStyle.white}]}>{this.props.diaryContents.point} P</Text>
                     </View>
-                    <View style={{flexDirection: "row"}}>
+                    <View style={{flexDirection: "row", justifyContent: "space-between"}}>
                         <HashTagView hashTag={this.props.diaryContents.hashTag}/>
                         <LikeView like={this.props.diaryContents.like} dislike={this.props.diaryContents.dislike} />
                     </View>
@@ -131,7 +136,7 @@ class HashTagClass extends Component {
     render() {
         return (
             <View style={[this.props.style, {marginRight: 12}]}>
-                <Text style={[textStyle.b12, {color: colorStyle.orange,}]}>#{this.props.contents}</Text>
+                <Text style={[textStyle.b12, {color: colorStyle.orange}]}>#{this.props.contents}</Text>
             </View>
         );
     }
@@ -144,8 +149,15 @@ class LikeView extends Component {
 
     render() {
         return (
-            <View style={[this.props.style]}>
-    
+            <View style={[this.props.style, {flexDirection: "row"}]}>
+                <View style={{width:40, flexDirection: "row", marginRight: 15}}>
+                    <Image style={[commonStyle.image12, {marginRight: 5}]} source={require("../../../resource/Button/Small/like.png")}/>
+                    <Text style={[textStyle.r10, {color:colorStyle.white}]}>{this.props.like}</Text>
+                </View>
+                <View style={{width:40, flexDirection: "row"}}>
+                    <Image style={[commonStyle.image12, {marginRight: 5}]} source={require("../../../resource/Button/Small/dislike.png")}/>
+                    <Text style={[textStyle.r10, {color:colorStyle.white}]}>{this.props.dislike}</Text>
+                </View>
             </View>
         );
     }
@@ -191,7 +203,7 @@ export default class MainScreen extends Component {
                 nowMenu={HOME_MENU}
             >
                 <View style={[{flex: 1}, commonStyle.marginSide]}>
-                    <PointView style={{height: 40}} point={20931} nickname="노녹이"/>
+                    <PointView style={{height: 40, marginTop: 10, marginBottom: 10}} point={20931} nickname="노녹이"/>
                     <DiaryView style={{flex: 1}} diaryContents={this.state.diaryContents}/>
                 </View>
             </ScreenTemplate>
