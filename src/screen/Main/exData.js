@@ -73,7 +73,7 @@ function getCommaNumber(number) {
     var numString = number.toString();
     
     for(var i = numString.length - 1; i > -1; i--) {
-        if(i % 3 == 2 && i != numString.length - 1) retStr = "," + retStr;
+        if((numString.length - i) % 3 == 1 && i != numString.length - 1) retStr = "," + retStr;
         retStr = numString[i] + retStr;
     }
 
