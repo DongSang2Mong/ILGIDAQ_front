@@ -4,6 +4,10 @@ import { View, FlatList, Text, Image } from 'react-native';
 import { commonStyle, textStyle, colorStyle } from '../commonStyle';
 import ScreenTemplate from '../../components/ScreenTemplate';
 import {HOME_MENU} from '../../components/BottomTab';
+import PointView from './PointView';
+import DiaryView from './DiaryView';
+
+import { exampleData } from "./exData"
 
 function getCommaNumber(number) {
     var retStr = "";
@@ -15,183 +19,10 @@ function getCommaNumber(number) {
     retStr = remainder.toString() + retStr;
 }
 
-class PointView extends Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return(
-            <View style={[this.props.style, {flexDirection: "row", justifyContent: "space-between"}]}>
-                <Text style={[textStyle.r18, {color: colorStyle.gray44, textAlignVertical: "center"}]}>{this.props.nickname} 님의 보유 포인트는?</Text>
-                <Text style={[textStyle.b24, {color: colorStyle.skyblue, textAlignVertical: "center"}]}>{this.props.point}</Text>
-                <Text style={[textStyle.b24, {textAlignVertical: "center"}]}>P</Text>
-            </View>
-        )
-    }
-}
-
-class DiaryView extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return(
-            <View style={[this.props.style]}>
-                <View style={{flexDirection: "row"}}>
-                    <Text style={[textStyle.b18, {color: colorStyle.orange}]}>오늘</Text>
-                    <Text style={[textStyle.b18]}>의 일기</Text>
-                </View>
-                <FlatList 
-                    data={this.props.diaryContents}
-                    renderItem={({ item }) => {
-                        return(<DiaryContents diaryContents={item}/>);
-                        
-                    }}
-                    keyExtractor={item => item.dairyID}
-                />
-            </View>
-        )
-    }
-}
-
-class DiaryContents extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        if(this.props.diaryContents.imgSrc == null) {
-            var radiusStyle = {borderTopRightRadius: 10, borderTopLeftRadius: 10};
-            var imageView = <View />;
-        }
-        else {
-            var radiusStyle = {};
-            var imageView = 
-            <View style={{width: "100%", height: 130, marginBottom: -1}}>
-                <Image style={{width:"100%", height: "100%", resizeMode: "cover", borderTopRightRadius: 10, borderTopLeftRadius: 10}} source={require("../../../resource/Temp/orange.png")}/>
-            </View>;
-        }
-        return(
-            <View style={[this.props.style, {marginTop: 10, marginBottom: 10}]}>
-                {imageView}
-                <DiaryMetadata style={radiusStyle} diaryContents={this.props.diaryContents}/>
-            </View>
-        )
-    }
-}
-
-class DiaryMetadata extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <View style={[this.props.style, {height: 95, backgroundColor: "#0E0E0E", borderBottomLeftRadius: 10, borderBottomRightRadius: 10}]}>
-                <View style={{marginLeft: 20, marginRight: 20, marginTop: 10}}>
-                    <Text style={[textStyle.b18, {color: colorStyle.white, marginBottom: 4}]}>{this.props.diaryContents.name}</Text>
-                    <Text style={[textStyle.r12, {color: colorStyle.white, marginBottom: 6}]}>{this.props.diaryContents.date}</Text>
-                    <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                        <Text style={[textStyle.r12, {color: colorStyle.white}]}>{this.props.diaryContents.writer}</Text>
-                        <Text style={[textStyle.b14, {color: colorStyle.white}]}>{this.props.diaryContents.point} P</Text>
-                    </View>
-                    <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                        <HashTagView hashTag={this.props.diaryContents.hashTag}/>
-                        <LikeView like={this.props.diaryContents.like} dislike={this.props.diaryContents.dislike} />
-                    </View>
-                </View>
-            </View>
-        );
-    }
-}
-
-class HashTagView extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <View style={[this.props.style]}>
-            <FlatList 
-                data={this.props.hashTag}
-                horizontal={true}
-                renderItem={({ item }) => {
-                    return(<HashTagClass contents={item}/>);
-                    
-                }}
-                keyExtractor={(item, index) => index.toString()}
-            />
-            </View>
-        );
-    }
-}
-
-class HashTagClass extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <View style={[this.props.style, {marginRight: 12}]}>
-                <Text style={[textStyle.b12, {color: colorStyle.orange}]}>#{this.props.contents}</Text>
-            </View>
-        );
-    }
-}
-
-class LikeView extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <View style={[this.props.style, {flexDirection: "row"}]}>
-                <View style={{width:40, flexDirection: "row", marginRight: 15}}>
-                    <Image style={[commonStyle.image12, {marginRight: 5}]} source={require("../../../resource/Button/Small/like.png")}/>
-                    <Text style={[textStyle.r10, {color:colorStyle.white}]}>{this.props.like}</Text>
-                </View>
-                <View style={{width:40, flexDirection: "row"}}>
-                    <Image style={[commonStyle.image12, {marginRight: 5}]} source={require("../../../resource/Button/Small/dislike.png")}/>
-                    <Text style={[textStyle.r10, {color:colorStyle.white}]}>{this.props.dislike}</Text>
-                </View>
-            </View>
-        );
-    }
-}
-
 export default class MainScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            diaryContents : [
-                {
-                    name: "자전거타자전거타자전거타자전거타",
-                    dairyID: "231",
-                    date: "2020.12.29",
-                    writer: "nonokee",
-                    imgSrc: "../../../resource/Temp/orange.png",
-                    hashTag: ["정보", "19", "한강"],
-                    point: 10000,
-                    like: 230,
-                    dislike: 12
-                },
-                {
-                    name: "빵터지는 최불암 깔깔 유모아",
-                    dairyID: "232",
-                    date: "2020.12.29",
-                    writer: "콩수내비",
-                    imgSrc: null,
-                    hashTag: ["유머", "최불암"],
-                    point: 1900,
-                    like: 130,
-                    dislike: 172
-                }
-            ]
-        }
+        this.state = { diaryContents : exampleData }
     }
 
     render() {
