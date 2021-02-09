@@ -9,16 +9,6 @@ import DiaryView from './DiaryView';
 
 import { exampleData } from "./exData"
 
-function getCommaNumber(number) {
-    var retStr = "";
-    var remainder = number % 1000;
-    while(number >= 1000) {
-        retStr = "," + remainder.toString() + retStr;
-        number = parseInt(number / 1000)
-    }
-    retStr = remainder.toString() + retStr;
-}
-
 export default class MainScreen extends Component {
     constructor(props) {
         super(props);

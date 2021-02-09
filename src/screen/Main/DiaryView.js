@@ -13,9 +13,9 @@ export default class DiaryView extends Component {
     render() {
         return(
             <View style={[this.props.style]}>
-                <View style={{flexDirection: "row"}}>
-                    <Text style={[textStyle.b18, {color: colorStyle.orange}]}>오늘</Text>
-                    <Text style={[textStyle.b18]}>의 일기</Text>
+                <View style={{flexDirection: "row", marginBottom: 9}}>
+                    <Text style={[textStyle.b20, {color: colorStyle.orange}]}>오늘</Text>
+                    <Text style={[textStyle.b20]}>의 일기</Text>
                 </View>
                 <FlatList 
                     data={this.props.diaryContents}
@@ -48,7 +48,7 @@ class DiaryContents extends Component {
             </View>;
         }
         return(
-            <View style={[this.props.style, {marginTop: 10, marginBottom: 10}]}>
+            <View style={[this.props.style, {marginTop: 5, marginBottom: 5}]}>
                 {imageView}
                 <DiaryMetadata style={radiusStyle} diaryContents={this.props.diaryContents}/>
             </View>
@@ -67,7 +67,7 @@ class DiaryMetadata extends Component {
                 <View style={{marginLeft: 20, marginRight: 20, marginTop: 10}}>
                     <Text style={[textStyle.b18, {color: colorStyle.white, marginBottom: 4}]}>{this.props.diaryContents.name}</Text>
                     <Text style={[textStyle.r12, {color: colorStyle.white, marginBottom: 6}]}>{this.props.diaryContents.date}</Text>
-                    <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+                    <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: 3}}>
                         <Text style={[textStyle.r12, {color: colorStyle.white}]}>{this.props.diaryContents.writer}</Text>
                         <Text style={[textStyle.b14, {color: colorStyle.white}]}>{this.props.diaryContents.point} P</Text>
                     </View>
