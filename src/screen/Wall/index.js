@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import {DASH_MENU, BottomTab} from '../../components/BottomTab';
 
 
-export default class BoardScreen extends Component {
+export default class WallScreen extends Component {
     constructor(props) {
         super(props);
     }
