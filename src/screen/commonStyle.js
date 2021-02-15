@@ -27,6 +27,11 @@ const commonStyle = StyleSheet.create({
         width: 16, 
         height: 16, 
         resizeMode: 'contain'
+    },
+    image12 : {
+        width: 12, 
+        height: 12, 
+        resizeMode: 'contain'
     }
 });
 
@@ -43,8 +48,28 @@ const textStyle = StyleSheet.create({
         fontSize: 12,
         fontFamily: "NanumSquareB"
     },
+    b12: {
+        fontSize: 12,
+        fontFamily: "NanumSquareB"
+    },
+    b14: {
+        fontSize: 14,
+        fontFamily: "NanumSquareB"
+    },
+    b18: {
+        fontSize: 18,
+        fontFamily: "NanumSquareB"
+    },
+    b20 :{
+        fontSize: 20,
+        fontFamily: "NanumSquareB"
+    },
     b22: {
         fontSize: 22,
+        fontFamily: "NanumSquareB"
+    },
+    b24: {
+        fontSize: 24,
         fontFamily: "NanumSquareB"
     },
     b26 : {
@@ -59,8 +84,20 @@ const textStyle = StyleSheet.create({
         fontSize: 60,
         fontFamily: "NanumSquareB"
     },
+    r10 : {
+        fontSize: 10,
+        fontFamily: "NanumSquareR"
+    },
+    r12 : {
+        fontSize: 12,
+        fontFamily: "NanumSquareR"
+    },
     r16 : {
         fontSize: 16,
+        fontFamily: "NanumSquareR"
+    },
+    r18 : {
+        fontSize: 18,
         fontFamily: "NanumSquareR"
     },
     r20 : {
@@ -76,6 +113,7 @@ const textStyle = StyleSheet.create({
 const colorStyle = {
     black : "#0E0E0E",
     gray : "#424242",
+    gray44: "#444444",
     orange: "#FF4218",
     white : "#FFFFFF",
     blue : "#1B49BE",
