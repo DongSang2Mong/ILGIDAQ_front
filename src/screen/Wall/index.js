@@ -1,25 +1,33 @@
 import React from 'react';
 import { Component } from 'react';
-import { View } from 'react-native';
+import { View, FlatList, Text, Image } from 'react-native';
 import { commonStyle, textStyle, colorStyle } from '../commonStyle';
-import Header from '../../components/Header';
-import {DASH_MENU, BottomTab} from '../../components/BottomTab';
+import ScreenTemplate from '../../components/ScreenTemplate';
+import {WALL_MENU} from '../../components/BottomTab';
+import PointView from './PointView';
+import DiaryView from './DiaryView';
 
+import { exampleData } from "./exData"
 
 export default class WallScreen extends Component {
     constructor(props) {
         super(props);
+        this.state = { diaryContents : exampleData }
     }
 
     render() {
         return (
-            <View style={{flex: 1}}>
-                <Header headerText="게시판" buttonType="None"/>
+            <ScreenTemplate 
+                navigation={this.props.navigation} 
+                headerText="담벼락" 
+                buttonType="None"
+                nowMenu={WALL_MENU}
+            >
                 <View style={[{flex: 1}, commonStyle.marginSide]}>
-                    
+                    <PointView style={{height: 40, marginTop: 10, marginBottom: 10}} point={20931} nickname="노녹이"/>
+                    <DiaryView style={{flex: 1}} diaryContents={this.state.diaryContents}/>
                 </View>
-                <BottomTab navigation={this.props.navigation} nowMenu={DASH_MENU}/>
-            </View>
+            </ScreenTemplate>
         );
     }
 }
