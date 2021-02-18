@@ -96,4 +96,11 @@ for(var i = 0; i < exampleData.length; i++) {
     exampleData[i].dislike = getPlusNumber(exampleData[i].dislike);
 }
 
-export {exampleData};
+const showList = [
+    "최신순",
+    "싼 가격순",
+    "비싼 가격순",
+    "인기순"
+]
+
+export {exampleData, showList};
