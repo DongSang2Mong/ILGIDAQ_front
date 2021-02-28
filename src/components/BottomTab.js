@@ -4,7 +4,7 @@ import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { commonStyle, colorStyle } from '../screen/commonStyle';
 
 const HOME_MENU = 1;
-const DASH_MENU = 2;
+const WALL_MENU = 2;
 const PROF_MENU = 3; 
 
 class BottomTab extends Component {
@@ -30,12 +30,12 @@ class BottomTab extends Component {
                     <TouchableOpacity
                         style={[commonStyle.centerAlign, {marginBottom: 4}]}
                         onPress={()=>{
-                            this.props.navigation.navigate("Board")
+                            this.props.navigation.navigate("Wall")
                         }}
                     >
                         <Image style={commonStyle.image28} source={require('../../resource/Button/Large/dashboard_icon58.png')} />
                     </TouchableOpacity>
-                    <SelectCircle selectState={this.props.nowMenu == DASH_MENU}/>
+                    <SelectCircle selectState={this.props.nowMenu == WALL_MENU}/>
                 </View>
                 <View style={[commonStyle.centerAlign, {flex: 1}]}>
                     <TouchableOpacity 
@@ -83,4 +83,4 @@ const tabStyle = StyleSheet.create({
     }
 });
 
-export {HOME_MENU, DASH_MENU, PROF_MENU, BottomTab};
+export {HOME_MENU, WALL_MENU, PROF_MENU, BottomTab};

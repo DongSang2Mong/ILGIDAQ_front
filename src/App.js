@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import BoardScreen from './screen/Board';
+import WallScreen from './screen/Wall';
 import EditScreen from './screen/Edit';
 import LoginScreen from './screen/Login';
 import MainScreen from './screen/Main';
@@ -25,7 +25,7 @@ class App extends Component {
                           animationEnabled: false,
                         }}
                     >
-                        <StackNaigation.Screen name="Board" component={BoardScreen} />
+                        <StackNaigation.Screen name="Wall" component={WallScreen} />
                         <StackNaigation.Screen name="Edit" component={EditScreen} />
                         <StackNaigation.Screen name="Login" component={LoginScreen} />
                         <StackNaigation.Screen name="Main" component={MainScreen} />
