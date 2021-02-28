@@ -23,6 +23,11 @@ const commonStyle = StyleSheet.create({
         height: 28, 
         resizeMode: 'contain'
     },
+    image24 : {
+        width: 24, 
+        height: 24, 
+        resizeMode: 'contain'
+    },
     image16 : {
         width: 16, 
         height: 16, 
