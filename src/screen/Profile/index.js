@@ -21,6 +21,7 @@ export default class ProfileScreen extends Component {
                 headerText="프로필" 
                 buttonType="None"
                 nowMenu={PROF_MENU}
+                bottomShow={true}
             >
                 <View style={[{flex: 1}, commonStyle.marginSide]}>
                     <View style={{flex: 0.8}} />

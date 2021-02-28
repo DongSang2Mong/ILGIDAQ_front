@@ -11,11 +11,13 @@ export default class ScreenTemplate extends Component {
     }
 
     render() {
+        let bottomTab = <View />;
+        if(this.props.bottomShow) bottomTab = <BottomTab navigation={this.props.navigation} nowMenu={this.props.nowMenu}/>;
         return (
             <View style={{flex: 1, backgroundColor: "#FFFFFF"}}>
                 <Header headerText={this.props.headerText} buttonType={this.props.buttonType}/>
-                    {this.props.children}
-                <BottomTab navigation={this.props.navigation} nowMenu={this.props.nowMenu}/>
+                {this.props.children}
+                {bottomTab}
             </View>
         );
     }

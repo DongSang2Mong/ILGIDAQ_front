@@ -22,6 +22,7 @@ export default class MainScreen extends Component {
                 headerText="메인" 
                 buttonType="None"
                 nowMenu={HOME_MENU}
+                bottomShow={true}
             >
                 <View style={[{flex: 1}, commonStyle.marginSide]}>
                     <PointView style={{height: 40, marginTop: 10, marginBottom: 10}} point={20931} nickname="노녹이"/>
